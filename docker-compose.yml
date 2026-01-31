@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  renai:
+    build: .
+    container_name: renai-assistant
+    ports:
+      - "8000:8000"
+    environment:
+      # Ollama Configuration
+      # Use host.docker.internal on Mac/Windows, or host IP on Linux
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - DEFAULT_MODEL=llama2
+
+      # Model Parameters
+      - MAX_TOKENS=2048
+      - TEMPERATURE=0.7
+      - TOP_P=0.9
+
+      # Server Configuration
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEBUG=false
+
+      # Frontend
+      - FRONTEND_PATH=./frontend
+
+    volumes:
+      # Mount for development (comment out for production)
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+
+    restart: unless-stopped
+
+    extra_hosts:
+      # For Linux: allow container to reach host Ollama
+      - "host.docker.internal:host-gateway"
+
+networks:
+  default:
+    name: renai-network

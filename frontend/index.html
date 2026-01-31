@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenAI - Your Home AI Assistant</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RenAI</h1>
+            <p class="subtitle">Your Fast & Responsive Home AI Assistant</p>
+        </header>
+
+        <div class="model-selector-container">
+            <label for="model-select">Model:</label>
+            <select id="model-select">
+                <option value="">Loading models...</option>
+            </select>
+        </div>
+
+        <div class="chat-container">
+            <div id="messages" class="messages"></div>
+            <div id="loading" class="loading" style="display: none;">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <form id="chat-form">
+                <textarea
+                    id="message-input"
+                    placeholder="Type your message here..."
+                    rows="3"
+                    autocomplete="off"
+                ></textarea>
+                <button type="submit" id="send-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+    </div>
+
+    <script src="/static/js/chat.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
