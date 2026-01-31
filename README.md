@@ -2,7 +2,7 @@
 
 RenAI is a lightweight, fast AI assistant designed to run on your home network. It integrates seamlessly with Ollama for local LLM inference and provides a clean, responsive web interface for chatting with AI models.
 
-(Upcoming itegration with uOS (https://github.com/syaomix/www-uos)
+(Upcoming integration with uOS (https://github.com/syaomix/www-uos)
 
 ## Features
 
