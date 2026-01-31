@@ -1,3 +1,5 @@
+![description](e101e1a7-2251-44ab-9482-c20d6398c24f.jpg)
+
 # RenAI - Fast & Responsive AI Assistant
 
 RenAI is a lightweight, fast AI assistant designed to run on your home network. It integrates seamlessly with Ollama for local LLM inference and provides a clean, responsive web interface for chatting with AI models.
