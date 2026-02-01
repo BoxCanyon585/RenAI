@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+
+# FastAPI
+.env
+
+# Speech models (large files)
+models/
+
+# Tauri/Rust
+target/
+Cargo.lock
+
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Logs
+*.log

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenAI - Your Home AI Assistant</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-title">
+                    <h1>RenAI</h1>
+                    <p class="subtitle">Your Fast & Responsive Home AI Assistant</p>
+                </div>
+                <button id="settings-button" class="icon-button" title="Settings">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6m-8-7h6m6 0h6m-4.3-4.3l-4.3 4.3m0 0l-4.3 4.3m0-8.6l4.3 4.3m0 0l4.3 4.3"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <div class="model-selector-container">
+            <label for="model-select">Model:</label>
+            <select id="model-select">
+                <option value="">Loading models...</option>
+            </select>
+        </div>
+
+        <div class="chat-container">
+            <div id="messages" class="messages"></div>
+            <div id="loading" class="loading" style="display: none;">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <form id="chat-form">
+                <textarea
+                    id="message-input"
+                    placeholder="Type your message here or use voice input..."
+                    rows="3"
+                    autocomplete="off"
+                ></textarea>
+                <div class="input-buttons">
+                    <button type="button" id="mic-button" class="mic-button" title="Voice input (click to start/stop)">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                    </button>
+                    <button type="submit" id="send-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="error-message" class="error-message" style="display: none;"></div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="close-button" id="close-settings">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label for="auto-tts-toggle">
+                        <input type="checkbox" id="auto-tts-toggle">
+                        Auto-play text-to-speech for responses
+                    </label>
+                    <p class="setting-description">Automatically speak assistant responses aloud</p>
+                </div>
+                <div class="setting-group">
+                    <label for="whisper-model-select">Whisper Model Size</label>
+                    <select id="whisper-model-select">
+                        <option value="tiny.en">Tiny (40MB, fastest)</option>
+                        <option value="base.en" selected>Base (150MB, balanced)</option>
+                        <option value="small.en">Small (500MB, most accurate)</option>
+                    </select>
+                    <p class="setting-description">Larger models are more accurate but slower</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/audio.js"></script>
+    <script src="/static/js/chat.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
